@@ -1,0 +1,140 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== GENERAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ===== BOUTONS ===== */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background-color: #34495e;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+}
+
+input {
+    width: 60px;
+    text-align: center;
+}
+
+/* ===== COULEURS LIGNES ===== */
+.green { background-color: #d4edda; }
+.orange { background-color: #fff3cd; }
+.red { background-color: #f8d7da; }
+
+/* ===== STATISTIQUES ===== */
+.stats {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stats h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 120px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-card span {
+    display: block;
+    font-size: 22px;
+}
+
+/* Couleurs */
+.rapide { background: #27ae60; }
+.moyen { background: #f39c12; }
+.long { background: #e74c3c; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+
+    button {
+        width: 100%;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    input {
+        width: 50px;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+    }
+}

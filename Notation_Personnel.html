@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notation du Personnel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+
+<h1>Notation du Personnel</h1>
+
+<!-- ===== BOUTONS ===== -->
+<div class="actions">
+    <button onclick="CalculerTous()">Calculer Tous</button>
+    <button onclick="Generer()">Générer</button>
+    <button onclick="Statistiques()">Statistiques</button>
+    <button onclick="effacer()">Effacer</button>
+</div>
+
+<!-- ===== TABLE ===== -->
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Poste</th>
+            <th>Assiduité</th>
+            <th>Discipline</th>
+            <th>Animation</th>
+            <th>Encadrement</th>
+            <th>Préparation</th>
+            <th>Total</th>
+            <th>Décision</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="personnelTableBody"></tbody>
+</table>
+</div>
+
+<!-- ===== STATISTIQUES ===== -->
+<div class="stats">
+    <h2>Statistiques</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card rapide">
+            Rapide
+            <span id="rap">0</span>
+        </div>
+
+        <div class="stat-card moyen">
+            Moyen
+            <span id="moy">0</span>
+        </div>
+
+        <div class="stat-card long">
+            Long
+            <span id="lon">0</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== DONNÉES ===== -->
+<script src="personnel.js"></script>
+
+<script>
+
+/* ===== INITIALISATION ===== */
+function init() {
+    var data = JSON.parse(x);
+    var tableBody = document.getElementById("personnelTableBody");
+
+    data.personnel.forEach(function(person) {
+
+        var row = document.createElement("tr");
+        row.className = "tr1";
+
+        row.innerHTML = `
+            <td>${person.Matricule}</td>
+            <td>${person.name}</td>
+            <td>${person.age}</td>
+            <td>${person.position}</td>
+
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+
+            <td><input type="text" readonly></td>
+            <td><input type="text" readonly></td>
+
+            <td>
+                <button onclick="calc(this.parentNode.parentNode)">
+                    Calculer
+                </button>
+            </td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+/* ===== VERIFICATION ===== */
+function Verification(row){
+    let vide = true;
+
+    for (let i = 4; i <= 8; i++) {
+        let val = row.cells[i].children[0].value;
+
+        if(val !== "") vide = false;
+
+        let num = parseFloat(val);
+
+        if (val !== "" && (isNaN(num) || num < 0 || num > 20)) {
+            return false;
+        }
+    }
+
+    if(vide) return "vide";
+
+    return true;
+}
+
+/* ===== DECISION ===== */
+function Decision(row){
+
+    let total = parseFloat(row.cells[9].children[0].value);
+
+    if (total >= 70){
+        row.cells[10].children[0].value = "Rapide";
+        row.className = "tr1 green";
+    }
+    else if (total >= 50){
+        row.cells[10].children[0].value = "Moyen";
+        row.className = "tr1 orange";
+    }
+    else{
+        row.cells[10].children[0].value = "Long";
+        row.className = "tr1 red";
+    }
+}
+
+/* ===== CALCUL LIGNE ===== */
+function calc(row){
+
+    let somme = 0;
+    let verif = Verification(row);
+
+    if(verif === "vide") return;
+
+    if(verif === true){
+
+        for(let i=4; i<=8; i++){
+            let val = parseFloat(row.cells[i].children[0].value) || 0;
+            somme += val;
+        }
+
+        row.cells[9].children[0].value = somme;
+        Decision(row);
+
+    } else {
+        alert("Les notes doivent être entre 0 et 20 !");
+    }
+}
+
+/* ===== CALCULER TOUS ===== */
+function CalculerTous(){
+    let rows = document.getElementsByClassName("tr1");
+
+    for(let r of rows){
+        calc(r);
+    }
+
+    Statistiques();
+}
+
+/* ===== GENERER ===== */
+function Generer(){
+    let rows = document.getElementsByClassName("tr1");
+
+    for(let r of rows){
+        for(let i = 4; i <= 8; i++){
+            r.cells[i].children[0].value = (Math.random()*20).toFixed(1);
+        }
+    }
+
+    CalculerTous();
+}
+
+/* ===== STATISTIQUES ===== */
+function Statistiques(){
+
+    let rows = document.getElementsByClassName("tr1");
+
+    let rap=0, moy=0, lon=0;
+
+    for(let r of rows){
+        let d = r.cells[10].children[0].value;
+
+        if(d==="Rapide") rap++;
+        else if(d==="Moyen") moy++;
+        else if(d==="Long") lon++;
+    }
+
+    document.getElementById("rap").innerHTML = rap;
+    document.getElementById("moy").innerHTML = moy;
+    document.getElementById("lon").innerHTML = lon;
+}
+
+/* ===== EFFACER ===== */
+function effacer(){
+
+    let inputs = document.querySelectorAll("input");
+
+    inputs.forEach(i => {
+        if(i.type !== "button") i.value="";
+    });
+
+    document.getElementById("rap").innerHTML="";
+    document.getElementById("moy").innerHTML="";
+    document.getElementById("lon").innerHTML="";
+}
+
+</script>
+
+</body>
+</html>
