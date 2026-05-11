@@ -1,96 +1,88 @@
 ````md
-# 📊 Application de Notation du Personnel
+# Personnel Evaluation System
 
-Application web simple permettant de gérer et calculer la notation du personnel selon plusieurs critères d’évaluation.
-
----
-
-## 🚀 Fonctionnalités
-
-- Affichage dynamique du personnel
-- Saisie des notes d’évaluation
-- Calcul automatique des totaux
-- Attribution automatique des décisions
-- Génération de statistiques
-- Génération aléatoire des notes
-- Réinitialisation des données
-- Interface responsive
+This project is a simple personnel evaluation and management system built with HTML, CSS, and JavaScript.  
+It allows managers to evaluate employees based on different criteria and automatically generate statistics and decisions.
 
 ---
 
-## 🛠️ Technologies Utilisées
+## Project Structure
 
-- HTML5
-- CSS3
-- JavaScript Vanilla
-
----
-
-## 📁 Structure du Projet
-
-```bash
-📦 notation-personnel
- ┣ 📄 Notation_Personnel.html
- ┣ 📄 personnel.js
- ┣ 📄 style.css
- ┣ 📂 screenshots
- ┃ ┣ 📷 app.png
- ┃ ┗ 📷 stats.png
- ┗ 📄 README.md
-```
+- **Frontend (HTML/CSS/JavaScript)**: User interface and application logic.
+  - `Notation_Personnel.html`: Main application page.
+  - `style.css`: Application styling and responsive design.
+  - `Personnel.js`: Personnel data source.
+  - `screenshots/`: Application screenshots used in the README.
 
 ---
 
-```md id="v82ka1"
-## 📸 Captures de l’Application
+## Features
 
-### 🖥️ Interface Principale
+### Personnel Evaluation Table
+- Dynamic personnel display
+- Employee evaluation system
+- Automatic total calculation
+- Decision generation based on scores
 
-![Application](./screenshots/app.png)
-
----
-
-### 📊 Statistiques
-
-![Statistiques](./screenshots/stats.png)
-```
+![Application](screenshots/app.png)
 
 ---
 
-## ▶️ Lancer le Projet
+### Statistics Dashboard
+- Rapid evaluation statistics
+- Medium evaluation statistics
+- Long evaluation statistics
 
-1. Télécharger le projet
-2. Ouvrir :
-
-```bash
-Notation_Personnel.html
-```
-
-dans votre navigateur.
+![Statistics](screenshots/stats.png)
 
 ---
 
-## 📊 Logique de Décision
+## Decision Logic
 
-| Total | Décision |
-|------|-----------|
+| Total Score | Decision |
+|------------|-----------|
 | ≥ 70 | Rapide |
 | ≥ 50 | Moyen |
 | < 50 | Long |
 
 ---
 
-## 🔐 Validation
+## Technologies Used
 
-Les notes doivent être comprises entre :
-
-```bash
-0 et 20
-```
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
 ---
 
-## 👨‍💻 Auteur
+## Setup Instructions
 
-Projet réalisé en JavaScript Vanilla dans le cadre d’un système de gestion et d’évaluation du personnel.
+1. Download or clone the project
+2. Open:
+
+```bash
+Notation_Personnel.html
 ````
+
+in your browser.
+
+---
+
+## Future Improvements
+
+* LocalStorage support
+* PDF export
+* Excel export
+* Authentication system
+* Backend integration
+* Database support
+* Advanced statistics dashboard
+
+---
+
+## Author
+
+Project developed as a personnel evaluation and management system using Vanilla JavaScript.
+
+```
+```
