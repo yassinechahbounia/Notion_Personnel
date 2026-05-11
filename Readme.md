@@ -41,17 +41,19 @@ Application web simple permettant de gérer et calculer la notation du personnel
 
 ---
 
+```md id="v82ka1"
 ## 📸 Captures de l’Application
 
 ### 🖥️ Interface Principale
 
-<img src="./screenshots/app.png" width="100%" alt="Application Notation Personnel">
+![Application](./screenshots/app.png)
 
 ---
 
 ### 📊 Statistiques
 
-<img src="./screenshots/stats.png" width="100%" alt="Statistiques">
+![Statistiques](./screenshots/stats.png)
+```
 
 ---
 
