@@ -68,16 +68,6 @@ in your browser.
 
 ---
 
-## Future Improvements
-
-* LocalStorage support
-* PDF export
-* Excel export
-* Authentication system
-* Backend integration
-* Database support
-* Advanced statistics dashboard
-
 ---
 
 ## Author
