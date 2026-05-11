@@ -34,32 +34,24 @@ Application web simple permettant de gérer et calculer la notation du personnel
  ┣ 📄 personnel.js
  ┣ 📄 style.css
  ┣ 📂 screenshots
+ ┃ ┣ 📷 app.png
+ ┃ ┗ 📷 stats.png
  ┗ 📄 README.md
-````
+```
 
 ---
 
 ## 📸 Captures de l’Application
 
-Placez vos captures d’écran dans le dossier :
+### 🖥️ Interface Principale
 
-```bash
-/screenshots
-```
+<img src="./screenshots/app.png" width="100%" alt="Application Notation Personnel">
 
-Puis ajoutez-les dans le README comme ceci :
+---
 
-```md
-## 📸 Aperçu
+### 📊 Statistiques
 
-### Interface Principale
-
-![Application](screenshots/app.png)
-
-### Statistiques
-
-![Statistiques](screenshots/stats.png)
-```
+<img src="./screenshots/stats.png" width="100%" alt="Statistiques">
 
 ---
 
@@ -79,10 +71,10 @@ dans votre navigateur.
 ## 📊 Logique de Décision
 
 | Total | Décision |
-| ----- | -------- |
-| ≥ 70  | Rapide   |
-| ≥ 50  | Moyen    |
-| < 50  | Long     |
+|------|-----------|
+| ≥ 70 | Rapide |
+| ≥ 50 | Moyen |
+| < 50 | Long |
 
 ---
 
@@ -99,6 +91,4 @@ Les notes doivent être comprises entre :
 ## 👨‍💻 Auteur
 
 Projet réalisé en JavaScript Vanilla dans le cadre d’un système de gestion et d’évaluation du personnel.
-
-```
-```
+````
