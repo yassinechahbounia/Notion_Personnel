@@ -38,16 +38,6 @@ It allows managers to evaluate employees based on different criteria and automat
 
 ---
 
-## Decision Logic
-
-| Total Score | Decision |
-|-------------|----------|
-| ≥ 70        | Rapide   |
-| ≥ 50        | Moyen    |
-| < 50        | Long     |
-
----
-
 ## Technologies Used
 
 - HTML5
