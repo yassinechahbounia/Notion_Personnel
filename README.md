@@ -24,7 +24,7 @@ It allows managers to evaluate employees based on different criteria and automat
 - Automatic total calculation
 - Decision generation based on scores
 
-![Application](./screenshots/app.png)
+![Accueil](screenshots/app.png)
 
 ---
 
