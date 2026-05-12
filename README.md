@@ -1,4 +1,4 @@
-````md
+
 # Personnel Evaluation System
 
 This project is a simple personnel evaluation and management system built with HTML, CSS, and JavaScript.  
@@ -74,5 +74,3 @@ in your browser.
 
 Project developed as a personnel evaluation and management system using Vanilla JavaScript.
 
-```
-```
